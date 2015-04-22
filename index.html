@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Johan Junkka" />
+  <title>Introduction to Git</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/revealjs_presentation/css/reveal.min.css"/>
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+
+<style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #303030; color: #cccccc; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #cccccc; background-color: #303030; }
+code > span.kw { color: #f0dfaf; }
+code > span.dt { color: #dfdfbf; }
+code > span.dv { color: #dcdccc; }
+code > span.bn { color: #dca3a3; }
+code > span.fl { color: #c0bed1; }
+code > span.ch { color: #dca3a3; }
+code > span.st { color: #cc9393; }
+code > span.co { color: #7f9f7f; }
+code > span.ot { color: #efef8f; }
+code > span.al { color: #ffcfaf; }
+code > span.fu { color: #efef8f; }
+code > span.er { color: #c3bf9f; }
+</style>
+
+<link rel="stylesheet" href="index_files/revealjs_presentation/css/theme/night.css" id="theme">
+
+
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'index_files/revealjs_presentation/css/print/pdf.css' : 'index_files/revealjs_presentation/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="index_files/revealjs_presentation/lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Introduction to Git</h1>
+    <h2 class="author">Johan Junkka</h2>
+    <h3 class="date"></h3>
+</section>
+
+<section id="git" class="slide level1">
+<h1>Git</h1>
+<ul>
+<li class="fragment">A distributed version control system</li>
+<li class="fragment">Created for collaborative coding</li>
+<li class="fragment">Full local repository, independent of network</li>
+<li class="fragment">Fast and scalable</li>
+</ul>
+</section>
+<section id="history" class="slide level1">
+<h1>History</h1>
+<p>Initaly created by Linus Torvalds in 2005 - now maintained by Junio Hamano.</p>
+<iframe width="480" height="360" src="https://www.youtube.com/embed/4XpnKHJAok8" frameborder="0" allowfullscreen>
+</iframe>
+<p><small>Google Tech Talk: Linus on Git</small></p>
+</section>
+<section id="definitions" class="slide level1">
+<h1>Definitions</h1>
+<div style="text-align: left; font-size: 80%;">
+<p><strong>Working directory</strong></p>
+<p>The project directory containing all project files and folders you which to have under version control.</p>
+<p><strong>Repository</strong></p>
+<p>The <code>.git</code> directory where the history of your project is stored.</p>
+<p><strong>Commit</strong></p>
+<p>A snapshot containing the state of the project at a certain point.</p>
+<p><strong>HEAD</strong></p>
+<p>Refers to the commit currently checked out in the working directory.</p>
+</div>
+</section>
+<section id="section" class="slide level1">
+<h1></h1>
+<section data-transition="fade">
+<h2 id="the-git-model">The Git model</h2>
+<p><img src="assets/images/git_model1.png" alt="git model 1" /></p>
+</section>
+<section data-transition="fade">
+<h2 id="the-git-model-1">The Git model</h2>
+<p><img src="assets/images/git_model2.png" alt="git model 2" /> <small><a href="http://www.slideshare.net/lfittl/introduction-to-git-4642204"><a href="http://www.slideshare.net/lfittl/introduction-to-git-4642204" class="uri">http://www.slideshare.net/lfittl/introduction-to-git-4642204</a></a></small></p>
+</section>
+</section>
+<section id="section-1" class="slide level1">
+<h1></h1>
+<section>
+<h1>
+Set up
+</h1>
+<p>Need: git and a GitHub or BitBucket account</p>
+<p>Don’t forget: 5 free private repos via <a href="https://github.com/blog/1840-improving-github-for-science">GitHub Academic account</a></p>
+<p>Optional: Visual git tool, such as Rstudio, GitHub for Mac</p>
+</section>
+<section>
+<h2 id="install">Install</h2>
+<p>Mac with homebrew <code>brew install git</code></p>
+<p>Linux <code>sudo apt-get install git</code></p>
+</section>
+</section>
+<section id="config" class="slide level1">
+<h1>Config</h1>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> config --global user.name <span class="st">&quot;junkka&quot;</span>
+<span class="kw">git</span> config --global user.email johan.junkka@gmail.com
+
+<span class="kw">git</span> config --global core.editor vim
+
+<span class="co"># check config</span>
+<span class="kw">git</span> config --list</code></pre>
+</section>
+<section id="ssh-key" class="slide level1">
+<h1>SSH key</h1>
+<p>Easiest way to use with a remote server. <a href="https://help.github.com/articles/generating-ssh-keys/">Instructions</a></p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ssh-keygen</span> -t rsa -C <span class="st">&quot;johan.junkka@gmail.com&quot;</span>
+<span class="kw">cat</span> ~/.ssh/id_rsa.pub </code></pre>
+<p>Copy ssh key -&gt; Login to service -&gt; new ssh -&gt; paste ssh key</p>
+</section>
+<section id="section-2" class="slide level1">
+<h1></h1>
+<section>
+<h2 id="new-local-repo">New local repo</h2>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> init</code></pre>
+<pre><code>Initialized empty Git repository in /home/johan/rproj/git-pres/.git/</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> status</code></pre>
+<pre><code>On branch master
+
+Initial commit
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+  README.md
+  assets/
+  index.Rmd
+  output/
+  render_pres.R
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
+</section>
+<section>
+<h2 id="first-commit">First commit</h2>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> add README.md
+<span class="kw">git</span> commit -m <span class="st">&quot;first commit&quot;</span></code></pre>
+<p>Check status</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> status
+<span class="kw">git</span> log
+
+<span class="co"># Overview</span>
+<span class="kw">git</span> log --stat</code></pre>
+</section>
+<section>
+<h2 id="gitignore">.gitignore</h2>
+<p>Excludes files and directories from git</p>
+<p>.gitignore example:</p>
+<pre><code>.Rhistory
+temp/</code></pre>
+</section>
+<section>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">echo</span> <span class="st">&#39;output/&#39;</span> <span class="kw">&gt;</span> .gitignore
+
+<span class="co"># Add all files</span>
+<span class="kw">git</span> add -A
+<span class="kw">git</span> commit -m <span class="st">&quot;initial all&quot;</span>
+
+<span class="co"># View commit history</span>
+<span class="kw">git</span> log
+
+<span class="co"># View all currently tracked files</span>
+<span class="kw">git</span> ls-tree -r master --name-only</code></pre>
+</section>
+</section>
+<section id="section-3" class="slide level1">
+<h1></h1>
+<section>
+<h2 id="add-remote-repo">Add remote repo</h2>
+<p><img src="assets/images/new_repo.png" alt="new repo" /></p>
+<p><a href="https://github.com/new">GitHub</a></p>
+</section>
+<section>
+<h2 id="add-remote-to-local-repository">Add remote to local repository</h2>
+<pre><code>git remote add REMOTE-NAME REMOTE-ADRESS</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> remote add origin git@github.com:junkka/git-pres.git</code></pre>
+</section>
+</section>
+<section id="section-4" class="slide level1">
+<h1></h1>
+<section>
+<h1>
+Push
+</h1>
+<p>First remote push</p>
+<p>push all commits with <code>-all</code></p>
+<p>set remote as main upstream repository with <code>-u</code></p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> push -u origin --all</code></pre>
+</section>
+<section>
+<h2 id="make-changes-commit-and-push">Make changes, commit and push</h2>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Update file</span>
+
+<span class="kw">git</span> commit -am <span class="st">&quot;update&quot;</span>
+<span class="kw">git</span> push origin master</code></pre>
+</section>
+</section>
+<section id="section-5" class="slide level1">
+<h1></h1>
+<section>
+<h1>
+Diff
+</h1>
+<p>To view changes between current version and last commited or between versions. Best to use a diff tool. Such as vimdiff, meld, sublimerge etc. Also included in most GUI such as RStudio</p>
+<p>For this example we use meld which we set up from the terminal <a href="http://www.wiredforcode.com/blog/2011/06/04/git-with-meld-diff-viewer-on-ubuntu/">instructions</a></p>
+</section>
+<section>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install meld</code></pre>
+<p>Needs a small startup script</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+<span class="kw">meld</span> <span class="st">&quot;</span><span class="ot">$2</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="ot">$5</span><span class="st">&quot;</span> <span class="kw">&gt;</span> /dev/null <span class="kw">2&gt;&amp;1</span></code></pre>
+<p>Add as default diff tool</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> config --global diff.tool  /usr/local/bin/git-diff.sh</code></pre>
+</section>
+<section>
+<h2 id="now">Now</h2>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> difftool filename</code></pre>
+</section>
+</section>
+<section id="section-6" class="slide level1">
+<h1></h1>
+<section>
+<h1>
+Reset, revert or “undo”!
+</h1>
+<p>Accidentally pushed half your harddrive to github?</p>
+</section>
+<section>
+<h3 id="panic">Panic!</h3>
+<ol type="1">
+<li>Delete public repo on github</li>
+<li>remove .git/ folder</li>
+</ol>
+</section>
+<section>
+<h3 id="only-last-commit">Only last commit</h3>
+<p>Force github to reset!</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> reset 93c1d75a8 --hard <span class="co">#commithash </span>
+<span class="kw">git</span> push -f origin  <span class="co"># as in force</span></code></pre>
+</section>
+</section>
+<section id="all-together" class="slide level1">
+<h1>All together</h1>
+<p><a href="Git%20visualization"><a href="http://onlywei.github.io/explain-git-with-d3/" class="uri">http://onlywei.github.io/explain-git-with-d3/</a></a></p>
+</section>
+<section id="section-7" class="slide level1">
+<h1></h1>
+<section>
+<h2 id="more">More</h2>
+<p><code>git clone REPOADRESS</code> = start from an existing project</p>
+<p><code>git checkout -b BRANCH</code> = start a new branch</p>
+<p><code>git merge BRANCH</code> = merge changes from another branch into current</p>
+</section>
+<section>
+<p><code>git checkout BRANCH</code> = checkout an existing branch</p>
+<p><code>git checkout HASH</code> = checkout a previous commit</p>
+<p><code>git tag v1.0</code> = add tag to last commit, easier to find</p>
+<p><code>git push origin --tags</code> = because git doesn’t push tags automatically</p>
+</section>
+</section>
+<section id="resources" class="slide level1">
+<h1>Resources</h1>
+<p><a href="http://git-scm.com/">Git official website</a></p>
+<p><a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf">GitHub cheat-sheet</a></p>
+<p><a href="https://training.github.com/">GitHub training</a></p>
+<p><a href="https://www.atlassian.com/git/">Getting Git Right | Atlassian Git Tutorial</a></p>
+<p><a href="?print-pdf">Print PDF</a></p>
+</section>
+    </div>
+  </div>
+
+  <script src="index_files/revealjs_presentation/lib/js/head.min.js"></script>
+  <script src="index_files/revealjs_presentation/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide',
+        backgroundTransition: 'default',
+        
+        // Optional libraries used to extend on reveal.js
+        dependencies: []});
+    </script>
+
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+  </body>
+</html>
